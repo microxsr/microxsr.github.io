@@ -1,0 +1,1007 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Windows Phone,wp,HTML,HTML5,WebBrowser," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="背景在开发Windows Phone的项目中，需求中有几个页面是要用表格来布局的(效果图如下)，由于Grid中有的边线是虚的，而且没有边线，果断放弃了，用了border将表格的线加上去了。于是在有表格布局的页面，感觉很耗新能。在512M内存的手机上测试也不影响什么，于是就上传到商店了。现在想起来，WP8不是可以用HTML5编程么？于是就写了个DEMO来测试HTML的使用方法。">
+<meta name="keywords" content="Windows Phone,wp,HTML,HTML5,WebBrowser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Windows Phone中使用HTML编程">
+<meta property="og:url" content="http://www.microxsr.com/2013/10/11/在Windows Phone中使用HTML编程/index.html">
+<meta property="og:site_name" content="MicroX.S.r">
+<meta property="og:description" content="背景在开发Windows Phone的项目中，需求中有几个页面是要用表格来布局的(效果图如下)，由于Grid中有的边线是虚的，而且没有边线，果断放弃了，用了border将表格的线加上去了。于是在有表格布局的页面，感觉很耗新能。在512M内存的手机上测试也不影响什么，于是就上传到商店了。现在想起来，WP8不是可以用HTML5编程么？于是就写了个DEMO来测试HTML的使用方法。">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11141032-ff963ea3eace4cdcaae28ece97f6113c.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11162509-cc502bf365ae4b168dbf2d67596af6ba.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11160539-e1e9368f8555491dabdd9b214f8f1291.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11162700-564690c11fe54de39018d34be4b1a3a5.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11162746-fa0ef413d58744afbea2daa0318ff1a5.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11160542-88e7126df88d45f39574fb3816e2df77.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11162838-3698189269ef490490af265a30f13b93.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/359923/201310/11160543-0560a0e456be4873a0c027e7d6c4d865.png">
+<meta property="og:updated_time" content="2017-07-06T15:40:28.783Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Windows Phone中使用HTML编程">
+<meta name="twitter:description" content="背景在开发Windows Phone的项目中，需求中有几个页面是要用表格来布局的(效果图如下)，由于Grid中有的边线是虚的，而且没有边线，果断放弃了，用了border将表格的线加上去了。于是在有表格布局的页面，感觉很耗新能。在512M内存的手机上测试也不影响什么，于是就上传到商店了。现在想起来，WP8不是可以用HTML5编程么？于是就写了个DEMO来测试HTML的使用方法。">
+<meta name="twitter:image" content="http://images.cnitblog.com/blog/359923/201310/11141032-ff963ea3eace4cdcaae28ece97f6113c.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.microxsr.com/2013/10/11/在Windows Phone中使用HTML编程/"/>
+
+
+
+
+
+  <title>在Windows Phone中使用HTML编程 | MicroX.S.r</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?234cff1c62e3bb56fc35419a9585684c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MicroX.S.r</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">设计思想胜于编程技术、领域见识决定专业高度！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.microxsr.com/2013/10/11/在Windows Phone中使用HTML编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MicroX.S.r">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MicroX.S.r">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">在Windows Phone中使用HTML编程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-10-11T16:42:00+08:00">
+                2013-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows-Phone/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows Phone</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2013/10/11/在Windows Phone中使用HTML编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2013/10/11/在Windows Phone中使用HTML编程/" class="leancloud_visitors" data-flag-title="在Windows Phone中使用HTML编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在开发Windows Phone的项目中，需求中有几个页面是要用表格来布局的(效果图如下)，由于Grid中有的边线是虚的，而且没有边线，果断放弃了，用了border将表格的线加上去了。于是在有表格布局的页面，感觉很耗新能。在512M内存的手机上测试也不影响什么，于是就上传到商店了。现在想起来，WP8不是可以用HTML5编程么？于是就写了个DEMO来测试HTML的使用方法。</p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11141032-ff963ea3eace4cdcaae28ece97f6113c.jpg" alt=""></p>
+<p>跟WinForm一样，WP也有WebBrowser这个浏览器的框，所以可以在页面上加个WebBrowser来作为HTML的容器，然后将对应的HTML页面显示在里面。</p>
+<h2 id="开始教程"><a href="#开始教程" class="headerlink" title="开始教程"></a>开始教程</h2><h3 id="在VS2012中新建一个HTML5的项目"><a href="#在VS2012中新建一个HTML5的项目" class="headerlink" title="在VS2012中新建一个HTML5的项目"></a>在VS2012中新建一个HTML5的项目</h3><p><img src="http://images.cnitblog.com/blog/359923/201310/11162509-cc502bf365ae4b168dbf2d67596af6ba.png" alt=""></p>
+<h3 id="新建项目后看解决方案结构"><a href="#新建项目后看解决方案结构" class="headerlink" title="新建项目后看解决方案结构"></a>新建项目后看解决方案结构</h3><blockquote>
+<p>(vs会自动创建一个默认的HTML5程序示例，供开发者参考)</p>
+</blockquote>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11160539-e1e9368f8555491dabdd9b214f8f1291.png" alt=""></p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11162700-564690c11fe54de39018d34be4b1a3a5.png" alt=""></p>
+<h3 id="将我们要制作的表格放到一个HTML页面中去"><a href="#将我们要制作的表格放到一个HTML页面中去" class="headerlink" title="将我们要制作的表格放到一个HTML页面中去"></a>将我们要制作的表格放到一个HTML页面中去</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"td-title"</span>&gt;</span>企业名称<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"com"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"td-title"</span>&gt;</span>企业法人<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"td-title"</span>&gt;</span>法人电话<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"phone"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"td-title"</span>&gt;</span>企业所在地<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"adress"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"td-title"</span>&gt;</span>备案号<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"ipc"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"jianjie"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>如何填充数据呢？→Ajax。但是如何动态的获取数据呢？每个信息的id如何穿进去呢？就要看下一步了。</p>
+<p>如果不想用Ajax，也可以直接将HTML代码加载到WebBrowser中。具体的看文章结尾的分享。</p>
+<h3 id="进行JavaScript和C-，C-和JavaScript交互了。"><a href="#进行JavaScript和C-，C-和JavaScript交互了。" class="headerlink" title="进行JavaScript和C#，C#和JavaScript交互了。"></a>进行JavaScript和C#，C#和JavaScript交互了。</h3><p>如果能够像Asp.Net一样后台像前台HTML附加数据，或者传出对应的Id号该有多好啊，可惜WP毕竟不是Asp.Net。如果你访问的url（本地HTML）是加参数的话，那么用JavaScript可以直接获取参数。如果只是单单的访问一个页面呢？比方/Html/index.html，如何用C#传入对应的参数呢？</p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11162746-fa0ef413d58744afbea2daa0318ff1a5.png" alt=""></p>
+<p>用js写个方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetID</span>(<span class="params">id</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//你的方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后你C#通过浏览器对象的InvokeScript方法来调用你的JS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Browser.InvokeScript(&quot;GetID&quot;,&quot;10010&quot;);</div></pre></td></tr></table></figure>
+<p><em>（InvokeScript方法支持多参数）</em></p>
+<p>因为我是用HttpRequest去请求数据的，把id传入后再用ajax去获取数据感觉有点慢，于是乎就直接吧json数据通过C#传入到HTML的js方法里。然后通过js方法将数据填充到对应的表格中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">InsertHtml</span>(<span class="params">json</span>) </span>&#123;</div><div class="line">    json = $.parseJSON(json); <span class="comment">//将字符串格式化成json格式</span></div><div class="line">    $(<span class="string">"#com"</span>).html(json[<span class="string">"CName"</span>]);</div><div class="line">    $(<span class="string">"#name"</span>).html(json[<span class="string">"Contact"</span>]);</div><div class="line">    $(<span class="string">"#phone"</span>).html(json[<span class="string">"CTel"</span>]);</div><div class="line">    $(<span class="string">"#adress"</span>).html(json[<span class="string">"CAddress"</span>]);</div><div class="line">    $(<span class="string">"#ipc"</span>).html(json[<span class="string">"OrgCoad"</span>]);</div><div class="line">    $(<span class="string">"#jianjie"</span>).html(json[<span class="string">"CIntro"</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Browser.InvokeScript(&quot;InsertHtml&quot;, &quot;&#123;\&quot;CAddress\&quot;: \&quot;**省**市**区**广场1号门7楼\&quot;,       \&quot;CIntro\&quot;: \&quot;　　**建设集团有限公司成立于一九九三年，是一家综合性建筑业企业。&lt;br&gt;\&quot;,    \&quot;CName\&quot;: \&quot;**建设集团有限公司\&quot;,    \&quot;CTel\&quot;: \&quot;159****0500\&quot;,    \&quot;Contact\&quot;: \&quot;金**\&quot;,       \&quot;OrgCoad\&quot;: \&quot;733***90X\&quot;  &#125;&quot;);</div></pre></td></tr></table></figure>
+<p>结果就出来了。</p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11160542-88e7126df88d45f39574fb3816e2df77.jpg" alt=""></p>
+<p><strong>(注意：如果要是用JS的话一定要在WebBrowser 控件中设置 IsScriptEnabled=”True”，否则js不起作用)</strong></p>
+<p>如果我要在JS中调用C#拨打电话之类的操作呢？很简单，WebBrowser提供了这个事件。如下</p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11162838-3698189269ef490490af265a30f13b93.png" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"打电话"</span> <span class="attr">id</span>=<span class="string">"btn_call"</span> <span class="attr">style</span>=<span class="string">"width: 150px"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        $(<span class="string">"#btn_call"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">window</span>.external.notify(<span class="string">"18300001111"</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">phone:WebBrowser</span> <span class="attr">x:Name</span>=<span class="string">"Browser"</span></span></div><div class="line">                          <span class="attr">HorizontalAlignment</span>=<span class="string">"Stretch"</span></div><div class="line">                          <span class="attr">VerticalAlignment</span>=<span class="string">"Stretch"</span></div><div class="line">                          <span class="attr">Loaded</span>=<span class="string">"Browser_Loaded"</span></div><div class="line">                                  <span class="attr">IsHitTestVisible</span>=<span class="string">"True"</span></div><div class="line">                                  <span class="attr">IsScriptEnabled</span>=<span class="string">"True"</span></div><div class="line">                          <span class="attr">NavigationFailed</span>=<span class="string">"Browser_NavigationFailed"</span>  <span class="attr">Margin</span>=<span class="string">"0"</span>                                                      <span class="attr">ScriptNotify</span>=<span class="string">"Browser_ScriptNotify"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">phone:WebBrowser</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">private void Browser_ScriptNotify(object sender, NotifyEventArgs e)</div><div class="line">&#123;</div><div class="line">     PhoneCallTask phone = new PhoneCallTask();</div><div class="line">     phone.PhoneNumber = e.Value;</div><div class="line">     phone.Show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="手势操作"><a href="#手势操作" class="headerlink" title="手势操作"></a>手势操作</h3><p>如果你的这个HTML页面是在Pivot或者Panorama中的某个Item中，那么会遇到这个棘手的问题，就是手势操作，左右滑动可能不会切换Item。那该怎么办呢？不要急，toolkit里提供了一个组件供我们使用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">phone:WebBrowser</span> <span class="attr">x:Name</span>=<span class="string">"Browser"</span></span></div><div class="line">                          <span class="attr">HorizontalAlignment</span>=<span class="string">"Stretch"</span></div><div class="line">                          <span class="attr">VerticalAlignment</span>=<span class="string">"Stretch"</span></div><div class="line">                          <span class="attr">Loaded</span>=<span class="string">"Browser_Loaded"</span></div><div class="line">                                  <span class="attr">IsHitTestVisible</span>=<span class="string">"True"</span></div><div class="line">                          <span class="attr">NavigationFailed</span>=<span class="string">"Browser_NavigationFailed"</span>  <span class="attr">Margin</span>=<span class="string">"0"</span> <span class="attr">ScriptNotify</span>=<span class="string">"Browser_ScriptNotify"</span>&gt;</div><div class="line">                    </div><div class="line">                    <span class="tag">&lt;<span class="name">toolkit:GestureService.GestureListener</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">toolkit:GestureListener</span> <span class="attr">Flick</span>=<span class="string">"GestureListener_Flick"</span> /&gt;</span>                        </div><div class="line">                    <span class="tag">&lt;/<span class="name">toolkit:GestureService.GestureListener</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">phone:WebBrowser</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">private void GestureListener_Flick(object sender, FlickGestureEventArgs e)</div><div class="line">        &#123;</div><div class="line"></div><div class="line">            if (e.Direction.ToString() == &quot;Horizontal&quot;)</div><div class="line">            &#123;</div><div class="line">                if (e.Angle &gt; 0)//手向左滑动，即Items向右滚动</div><div class="line">                &#123;</div><div class="line">                    if (MyPivot.Items.Count == MyPivot.SelectedIndex + 1)</div><div class="line">                    &#123;</div><div class="line">                        MyPivot.SelectedIndex = 0;</div><div class="line">                    &#125;</div><div class="line">                    else</div><div class="line">                    &#123;</div><div class="line">                        MyPivot.SelectedIndex++;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">                else//反之</div><div class="line">                &#123;</div><div class="line">                    if (MyPivot.SelectedIndex == 0)</div><div class="line">                    &#123;</div><div class="line">                        MyPivot.SelectedIndex = MyPivot.Items.Count;</div><div class="line">                    &#125;</div><div class="line">                    else</div><div class="line">                    &#123;</div><div class="line">                        MyPivot.SelectedIndex--;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>如果Items的header(如图所示)没有超过屏幕宽度的话会有bug，就是切换的方向问题，还未想到好的解决方案。</p>
+<p><img src="http://images.cnitblog.com/blog/359923/201310/11160543-0560a0e456be4873a0c027e7d6c4d865.png" alt=""></p>
+<h3 id="关于网页与手机主题同步"><a href="#关于网页与手机主题同步" class="headerlink" title="关于网页与手机主题同步"></a>关于网页与手机主题同步</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">Background</span>;<span class="comment">/*Background跟系统背景一致*/</span></div><div class="line"><span class="selector-tag">color</span>: <span class="selector-tag">Highlight</span>;<span class="comment">/*Highlight跟系统的主题色一致*/</span></div></pre></td></tr></table></figure>
+<h3 id="页面的缩放"><a href="#页面的缩放" class="headerlink" title="页面的缩放"></a>页面的缩放</h3><p> 说了这么多，你可能会问，一些页面我并不想啊让缩放，怎么控制啊。很简单，由于浏览器对HTML5支持，所以只需要在HTML的Hand加入下面一段代码即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"width=device-width,user-scalable=no"</span> <span class="attr">name</span>=<span class="string">"viewport"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">   Viewport的Content相关属性介绍</div><div class="line">      width - viewport的宽度 height - viewport的高度</div><div class="line">      initial-scale - 初始的缩放比例</div><div class="line">      minimum-scale - 允许用户缩放到的最小比例</div><div class="line">      maximum-scale - 允许用户缩放到的最大比例</div><div class="line">      user-scalable - 用户是否可以手动缩放 </div><div class="line">--!&gt;</div></pre></td></tr></table></figure>
+<h3 id="资料分享"><a href="#资料分享" class="headerlink" title="资料分享"></a>资料分享</h3><p><a href="http://msdn.microsoft.com/zh-cn/library/3031e22a-e7ac-4d1e-b9e5-a627ac63f307" target="_blank" rel="external">Windows Phone WebBrowser的技巧</a> </p>
+<p><a href="http://download.microsoft.com/download/F/F/A/FFA87121-5A55-46B4-AD96-D30E0DF00ADD/WebCast20121228pm_Video.zip" target="_blank" rel="external">HTML5 in Windows Phone 8.zip</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/pay/wx_pay.jpg" alt="MicroX.S.r WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/pay/ali_pay.jpg" alt="MicroX.S.r Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      MicroX.S.r
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.microxsr.com/2013/10/11/在Windows Phone中使用HTML编程/" title="在Windows Phone中使用HTML编程">http://www.microxsr.com/2013/10/11/在Windows Phone中使用HTML编程/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows-Phone/" rel="tag"># Windows Phone</a>
+          
+            <a href="/tags/wp/" rel="tag"># wp</a>
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+            <a href="/tags/WebBrowser/" rel="tag"># WebBrowser</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/" rel="next" title="Windows Phone使用sliverlight toolkit实现页面切换动画效果">
+                <i class="fa fa-chevron-left"></i> Windows Phone使用sliverlight toolkit实现页面切换动画效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/02/如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题/" rel="prev" title="如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题">
+                如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/blog-head.jpg"
+               alt="MicroX.S.r" />
+          <p class="site-author-name" itemprop="name">MicroX.S.r</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/microxsr" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/534551323" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.layui.com/" title="LayUI" target="_blank">LayUI</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始教程"><span class="nav-number">2.</span> <span class="nav-text">开始教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在VS2012中新建一个HTML5的项目"><span class="nav-number">2.1.</span> <span class="nav-text">在VS2012中新建一个HTML5的项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建项目后看解决方案结构"><span class="nav-number">2.2.</span> <span class="nav-text">新建项目后看解决方案结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将我们要制作的表格放到一个HTML页面中去"><span class="nav-number">2.3.</span> <span class="nav-text">将我们要制作的表格放到一个HTML页面中去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进行JavaScript和C-，C-和JavaScript交互了。"><span class="nav-number">2.4.</span> <span class="nav-text">进行JavaScript和C#，C#和JavaScript交互了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手势操作"><span class="nav-number">2.5.</span> <span class="nav-text">手势操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于网页与手机主题同步"><span class="nav-number">2.6.</span> <span class="nav-text">关于网页与手机主题同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面的缩放"><span class="nav-number">2.7.</span> <span class="nav-text">页面的缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资料分享"><span class="nav-number">2.8.</span> <span class="nav-text">资料分享</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MicroX.S.r</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "c76425d2843544fb87b9e760c14b8e1a",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lAj1wccOGxs2dNzoKBPGJoj5-gzGzoHsz", "vPivd18qW2195eEFSiOVSGFK");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
