@@ -97,12 +97,12 @@
 <meta name="keywords" content="Elasticsearch,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux上安装Elasticsearch5.x">
-<meta property="og:url" content="http://www.microxsr.com/2017/07/02/在Linux上安装Elasticsearch5.x/index.html">
+<meta property="og:url" content="http://blog.microxsr.com/20170702/es-setup-linux.html">
 <meta property="og:site_name" content="MicroX.S.r">
 <meta property="og:description" content="在Linux上安装Elasticsearch5.x，基于阿里云CentOS 7.2 64位，2核4G">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201705/359923-20170505111822054-1557744675.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201705/359923-20170505111208711-1538841698.png">
-<meta property="og:updated_time" content="2017-07-03T15:20:01.379Z">
+<meta property="og:updated_time" content="2017-07-07T17:07:04.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Linux上安装Elasticsearch5.x">
 <meta name="twitter:description" content="在Linux上安装Elasticsearch5.x，基于阿里云CentOS 7.2 64位，2核4G">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://www.microxsr.com/2017/07/02/在Linux上安装Elasticsearch5.x/"/>
+  <link rel="canonical" href="http://blog.microxsr.com/20170702/es-setup-linux.html"/>
 
 
 
@@ -289,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.microxsr.com/2017/07/02/在Linux上安装Elasticsearch5.x/">
+    <link itemprop="mainEntityOfPage" href="http://blog.microxsr.com/20170702/es-setup-linux.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MicroX.S.r">
@@ -359,7 +359,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/07/02/在Linux上安装Elasticsearch5.x/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/20170702/es-setup-linux.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -368,7 +368,7 @@
 
           
           
-             <span id="/2017/07/02/在Linux上安装Elasticsearch5.x/" class="leancloud_visitors" data-flag-title="在Linux上安装Elasticsearch5.x">
+             <span id="/20170702/es-setup-linux.html" class="leancloud_visitors" data-flag-title="在Linux上安装Elasticsearch5.x">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,11 +401,11 @@
 
       
         <p>之前讲过在Windows上安装Elasticsearch5.x，但实际生产环境还是需要Linux支持，而且ES在Linux环境下运行要比Windows环境下要高，So…Linux上还是要学会安装。经过自己的研究还有同事的帮助，终于搞定Linux下安装Elasticsearch5.x了。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>1、这里我的系统是阿里云的 CentOS 7.2 64位，2核4G</p>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>1、这里我的系统是阿里云的 CentOS 7.2 64位，2核4G</p>
 <p>2、<code>$</code>开始的命令表示你要输入的命令</p>
-<h2 id="JAVA环境配置"><a href="#JAVA环境配置" class="headerlink" title="JAVA环境配置"></a>JAVA环境配置</h2><p>ElasticSearch是基于lucence开发的，也就是运行需要java支持。所以要先安装JAVA环境。<br>由于ElasticSearch 5.x 依赖于<code>JDK 1.8</code>的，所以现在我们下载JDK 1.8或者更高版本。以下命令将会下载最新的jdk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum install java</div></pre></td></tr></table></figure></p>
+<h2 id="二、JAVA环境配置"><a href="#二、JAVA环境配置" class="headerlink" title="二、JAVA环境配置"></a>二、JAVA环境配置</h2><p>ElasticSearch是基于lucence开发的，也就是运行需要java支持。所以要先安装JAVA环境。<br>由于ElasticSearch 5.x 依赖于<code>JDK 1.8</code>的，所以现在我们下载JDK 1.8或者更高版本。以下命令将会下载最新的jdk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum install java</div></pre></td></tr></table></figure></p>
 <p>安装完毕后测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java -version</div></pre></td></tr></table></figure></p>
-<h2 id="Elasticsearch引擎安装"><a href="#Elasticsearch引擎安装" class="headerlink" title="Elasticsearch引擎安装"></a>Elasticsearch引擎安装</h2><h3 id="创建帐号和分配权限"><a href="#创建帐号和分配权限" class="headerlink" title="创建帐号和分配权限"></a>创建帐号和分配权限</h3><p>官方文档上说Elasticsearch不适合在root管理员帐号下运行，所以要先建立一个账号专门运行Elasticsearch.</p>
+<h2 id="三、Elasticsearch引擎安装"><a href="#三、Elasticsearch引擎安装" class="headerlink" title="三、Elasticsearch引擎安装"></a>三、Elasticsearch引擎安装</h2><h3 id="1-创建帐号和分配权限"><a href="#1-创建帐号和分配权限" class="headerlink" title="1. 创建帐号和分配权限"></a>1. 创建帐号和分配权限</h3><p>官方文档上说Elasticsearch不适合在root管理员帐号下运行，所以要先建立一个账号专门运行Elasticsearch.</p>
 <p>创建一个elsearch账户</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adduser elsearch</div></pre></td></tr></table></figure>
 <p>设置密码</p>
@@ -419,7 +419,7 @@
 <p>在这个区块下面添加一行命令，使elsearch这个帐号可以获得更高的操作权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">## Allow root to run any commands anywhere </div><div class="line">root    ALL=(ALL)       ALL</div><div class="line">elsearch        ALL=(ALL)       NOPASSWD: ALL</div></pre></td></tr></table></figure>
 <p>ok保存。</p>
-<h3 id="引擎下载"><a href="#引擎下载" class="headerlink" title="引擎下载"></a>引擎下载</h3><p>退出root账户，使用刚刚创建的elsearch账户登录服务器想，下载Elasticsearch安装包。</p>
+<h3 id="2-引擎下载"><a href="#2-引擎下载" class="headerlink" title="2. 引擎下载"></a>2. 引擎下载</h3><p>退出root账户，使用刚刚创建的elsearch账户登录服务器想，下载Elasticsearch安装包。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -c https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.2.zip</div></pre></td></tr></table></figure>
 <p>文件校验</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sha1sum elasticsearch-5.3.2.zip</div></pre></td></tr></table></figure>
@@ -427,7 +427,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ unzip elasticsearch-5.3.2.zip</div></pre></td></tr></table></figure>
 <p>解压完将有两个文件，zip可以删掉。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ls</div><div class="line">elasticsearch-5.3.2  elasticsearch-5.3.2.zip</div></pre></td></tr></table></figure>
-<h3 id="引擎启动"><a href="#引擎启动" class="headerlink" title="引擎启动"></a>引擎启动</h3><p>进到elasticsearch-5.3.2目录下</p>
+<h3 id="3-引擎启动"><a href="#3-引擎启动" class="headerlink" title="3. 引擎启动"></a>3. 引擎启动</h3><p>进到elasticsearch-5.3.2目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># cd elasticsearch-5.3.2/</div></pre></td></tr></table></figure>
 <p>启动引擎(-d表示为后台启动)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./bin/elasticsearch -d</div></pre></td></tr></table></figure>
@@ -439,7 +439,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl &quot;localhost:9200&quot;</div></pre></td></tr></table></figure>
 <p>返回如下信息则说明启动成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot; : &quot;nHlYWW8&quot;,</div><div class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</div><div class="line">  &quot;cluster_uuid&quot; : &quot;SNUvV-1fQLKaGnfXrA4UXg&quot;,</div><div class="line">  &quot;version&quot; : &#123;</div><div class="line">    &quot;number&quot; : &quot;5.3.2&quot;,</div><div class="line">    &quot;build_hash&quot; : &quot;3068195&quot;,</div><div class="line">    &quot;build_date&quot; : &quot;2017-04-24T16:15:59.481Z&quot;,</div><div class="line">    &quot;build_snapshot&quot; : false,</div><div class="line">    &quot;lucene_version&quot; : &quot;6.4.2&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="引擎健康情况"><a href="#引擎健康情况" class="headerlink" title="引擎健康情况"></a>引擎健康情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ curl &quot;localhost:9200/_cat/health?v&quot;</div><div class="line"></div><div class="line"></div><div class="line">epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent</div><div class="line">1493916286 00:44:46  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%</div></pre></td></tr></table></figure>
+<h3 id="4-引擎健康情况"><a href="#4-引擎健康情况" class="headerlink" title="4. 引擎健康情况"></a>4. 引擎健康情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ curl &quot;localhost:9200/_cat/health?v&quot;</div><div class="line"></div><div class="line"></div><div class="line">epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent</div><div class="line">1493916286 00:44:46  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%</div></pre></td></tr></table></figure>
 <p>如果出现这条信息，说明你的elastic search已经正常运行了，恭喜你</p>
 <table>
 <thead>
@@ -514,7 +514,7 @@
 <li>绿色：主要分片和其备份都已经启动</li>
 </ul>
 <p><em>官方详情请参阅<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html</a></em></p>
-<h3 id="安装中文分词插件-smartcn"><a href="#安装中文分词插件-smartcn" class="headerlink" title="安装中文分词插件 smartcn"></a>安装中文分词插件 smartcn</h3><p>仍然使用elsearch登录，然后切换目录到elsearchsearch 所在的文件夹</p>
+<h3 id="5-安装中文分词插件-smartcn"><a href="#5-安装中文分词插件-smartcn" class="headerlink" title="5. 安装中文分词插件 smartcn"></a>5. 安装中文分词插件 smartcn</h3><p>仍然使用elsearch登录，然后切换目录到elsearchsearch 所在的文件夹</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd elasticsearch-5.3.2</div></pre></td></tr></table></figure>
 <p>执行安装命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ./bin/elasticsearch-plugin install analysis-smartcn</div></pre></td></tr></table></figure>
@@ -524,15 +524,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -XGET &apos;localhost:9200/_analyze?pretty&apos; -d &apos;&#123;&quot;analyzer&quot;:&quot;smartcn&quot;, &quot;text&quot;: &quot;\u4eba\u4eba\u7f16\u7a0b\uff0c\u4e16\u754c\u548c\u5e73&quot;&#125;&apos;</div></pre></td></tr></table></figure>
 <p>出现如下结果证明分词成功。若没有添加 <code>&quot;analyzer&quot;:&quot;smartcn&quot;</code> 指定分词，将使用默认分词。对于中文来讲，将会把所有的字单独分出来。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;tokens&quot; : [</div><div class="line">    &#123;</div><div class="line">      &quot;token&quot; : &quot;人人&quot;,</div><div class="line">      &quot;start_offset&quot; : 0,</div><div class="line">      &quot;end_offset&quot; : 2,</div><div class="line">      &quot;type&quot; : &quot;word&quot;,</div><div class="line">      &quot;position&quot; : 0</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;token&quot; : &quot;编程&quot;,</div><div class="line">      &quot;start_offset&quot; : 2,</div><div class="line">      &quot;end_offset&quot; : 4,</div><div class="line">      &quot;type&quot; : &quot;word&quot;,</div><div class="line">      &quot;position&quot; : 1</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;token&quot; : &quot;世界&quot;,</div><div class="line">      &quot;start_offset&quot; : 5,</div><div class="line">      &quot;end_offset&quot; : 7,</div><div class="line">      &quot;type&quot; : &quot;word&quot;,</div><div class="line">      &quot;position&quot; : 3</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;token&quot; : &quot;和平&quot;,</div><div class="line">      &quot;start_offset&quot; : 7,</div><div class="line">      &quot;end_offset&quot; : 9,</div><div class="line">      &quot;type&quot; : &quot;word&quot;,</div><div class="line">      &quot;position&quot; : 4</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="配置elasticsearch-yml"><a href="#配置elasticsearch-yml" class="headerlink" title="配置elasticsearch.yml"></a>配置elasticsearch.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd elasticsearch-5.3.2</div><div class="line">$ vim ./config/elasticsearch.yml</div></pre></td></tr></table></figure>
+<h3 id="6-配置elasticsearch-yml"><a href="#6-配置elasticsearch-yml" class="headerlink" title="6. 配置elasticsearch.yml"></a>6. 配置elasticsearch.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd elasticsearch-5.3.2</div><div class="line">$ vim ./config/elasticsearch.yml</div></pre></td></tr></table></figure>
 <p>根据需求修改一下节点：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">cluster.name: es-5.3-test   #换个集群的名字，免得跟别人的集群混在一起</div><div class="line"></div><div class="line">node.name: node-es-101     #换个节点名字</div><div class="line"></div><div class="line">network.host: 0.0.0.0       #修改一下ES的监听地址，这样别的机器也可以访问</div><div class="line">http.port: 9200             #端口号，默认就好</div><div class="line"></div><div class="line"></div><div class="line"># 增加新的参数，这样head插件可以访问es</div><div class="line">http.cors.enabled: true </div><div class="line">http.cors.allow-origin: &quot;*&quot;</div><div class="line"></div><div class="line"></div><div class="line">#增加新的参数，这样ES可以通过外网进行访问，只设置network.host: 0.0.0.0 公网仍旧无法访问</div><div class="line">transport.host: localhost</div><div class="line">transport.tcp.port: 9300</div><div class="line"></div><div class="line">@注意，设置参数的时候:后面要有空格！</div></pre></td></tr></table></figure>
-<h3 id="Sense安装使用"><a href="#Sense安装使用" class="headerlink" title="Sense安装使用"></a>Sense安装使用</h3><p>对于不熟悉Linux的人来讲，使用curl是个硬伤，所以 Chrome有个插件Sense可以帮我们很方便的操作Elasticsearch。国内需要翻墙。<br> <img src="http://images2015.cnblogs.com/blog/359923/201705/359923-20170505111822054-1557744675.png" alt=""></p>
+<h3 id="7-Sense安装使用"><a href="#7-Sense安装使用" class="headerlink" title="7. Sense安装使用"></a>7. Sense安装使用</h3><p>对于不熟悉Linux的人来讲，使用curl是个硬伤，所以 Chrome有个插件Sense可以帮我们很方便的操作Elasticsearch。国内需要翻墙。<br> <img src="http://images2015.cnblogs.com/blog/359923/201705/359923-20170505111822054-1557744675.png" alt=""></p>
 <p>先来测试下分词</p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201705/359923-20170505111208711-1538841698.png" alt=""></p>
-<h2 id="安装-Kibaba"><a href="#安装-Kibaba" class="headerlink" title="安装 Kibaba"></a>安装 Kibaba</h2><p>Kibana是一个开源为elasticsearch 引擎提供数据和数据分析</p>
-<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>切换到root账户，按顺序依次执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget -c https://artifacts.elastic.co/downloads/kibana/kibana-5.3.2-x86_64.rpm</div><div class="line">$ sha1sum kibana-5.3.2-x86_64.rpm </div><div class="line">$ sudo rpm --install kibana-5.3.2-x86_64.rpm</div></pre></td></tr></table></figure></p>
-<h3 id="配置Kibana的host"><a href="#配置Kibana的host" class="headerlink" title="配置Kibana的host"></a>配置Kibana的host</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis kibana</div><div class="line">kibana: /etc/kibana /usr/share/kibana</div></pre></td></tr></table></figure>
+<h2 id="四、安装-Kibaba"><a href="#四、安装-Kibaba" class="headerlink" title="四、安装 Kibaba"></a>四、安装 Kibaba</h2><p>Kibana是一个开源为elasticsearch 引擎提供数据和数据分析</p>
+<h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1. 下载安装"></a>1. 下载安装</h3><p>切换到root账户，按顺序依次执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget -c https://artifacts.elastic.co/downloads/kibana/kibana-5.3.2-x86_64.rpm</div><div class="line">$ sha1sum kibana-5.3.2-x86_64.rpm </div><div class="line">$ sudo rpm --install kibana-5.3.2-x86_64.rpm</div></pre></td></tr></table></figure></p>
+<h3 id="2-配置Kibana的host"><a href="#2-配置Kibana的host" class="headerlink" title="2. 配置Kibana的host"></a>2. 配置Kibana的host</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis kibana</div><div class="line">kibana: /etc/kibana /usr/share/kibana</div></pre></td></tr></table></figure>
 <p>如果显示以上结果表明kibana已经正确安装完成，两个目录</p>
 <p><code>/etc/kibana</code> 为kibana config文件所在的目录</p>
 <p><code>/usr/share/kibana</code> 为程序所在的目录</p>
@@ -540,7 +540,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/kibana/kibana.yml</div></pre></td></tr></table></figure>
 <p>将 <code>server.host</code> 修改为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">server.host: &quot;0.0.0.0&quot;</div></pre></td></tr></table></figure>
-<h3 id="启动Kibana"><a href="#启动Kibana" class="headerlink" title="启动Kibana"></a>启动Kibana</h3><p>配置kibana能够自动启动</p>
+<h3 id="3-启动Kibana"><a href="#3-启动Kibana" class="headerlink" title="3. 启动Kibana"></a>3. 启动Kibana</h3><p>配置kibana能够自动启动</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chkconfig --add kibana</div></pre></td></tr></table></figure>
 <p>启动和停止</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo -i service kibana start</div><div class="line">$ sudo -i service kibana stop</div></pre></td></tr></table></figure>
@@ -595,7 +595,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://www.microxsr.com/2017/07/02/在Linux上安装Elasticsearch5.x/" title="在Linux上安装Elasticsearch5.x">http://www.microxsr.com/2017/07/02/在Linux上安装Elasticsearch5.x/</a>
+      <a href="http://blog.microxsr.com/20170702/es-setup-linux.html" title="在Linux上安装Elasticsearch5.x">http://blog.microxsr.com/20170702/es-setup-linux.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -626,7 +626,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/02/如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题/" rel="next" title="如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题">
+              <a href="/20170402/solve-mvc-webapi-cannot-same.html" rel="next" title="如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题">
                 <i class="fa fa-chevron-left"></i> 如何解决Asp.Net MVC和WebAPI的Controller名称不能相同的问题
               </a>
             
@@ -636,8 +636,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/02/在Windows上安装Elasticsearch 5.x/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/20170702/es-setup-winows.html" rel="prev" title="在Windows上安装Elasticsearch 5.x">
+                在Windows上安装Elasticsearch 5.x <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -740,7 +740,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -809,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA环境配置"><span class="nav-number">2.</span> <span class="nav-text">JAVA环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch引擎安装"><span class="nav-number">3.</span> <span class="nav-text">Elasticsearch引擎安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建帐号和分配权限"><span class="nav-number">3.1.</span> <span class="nav-text">创建帐号和分配权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎下载"><span class="nav-number">3.2.</span> <span class="nav-text">引擎下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎启动"><span class="nav-number">3.3.</span> <span class="nav-text">引擎启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎健康情况"><span class="nav-number">3.4.</span> <span class="nav-text">引擎健康情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装中文分词插件-smartcn"><span class="nav-number">3.5.</span> <span class="nav-text">安装中文分词插件 smartcn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置elasticsearch-yml"><span class="nav-number">3.6.</span> <span class="nav-text">配置elasticsearch.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sense安装使用"><span class="nav-number">3.7.</span> <span class="nav-text">Sense安装使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Kibaba"><span class="nav-number">4.</span> <span class="nav-text">安装 Kibaba</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">4.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Kibana的host"><span class="nav-number">4.2.</span> <span class="nav-text">配置Kibana的host</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Kibana"><span class="nav-number">4.3.</span> <span class="nav-text">启动Kibana</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、JAVA环境配置"><span class="nav-text">二、JAVA环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Elasticsearch引擎安装"><span class="nav-text">三、Elasticsearch引擎安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建帐号和分配权限"><span class="nav-text">1. 创建帐号和分配权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-引擎下载"><span class="nav-text">2. 引擎下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引擎启动"><span class="nav-text">3. 引擎启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-引擎健康情况"><span class="nav-text">4. 引擎健康情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安装中文分词插件-smartcn"><span class="nav-text">5. 安装中文分词插件 smartcn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-配置elasticsearch-yml"><span class="nav-text">6. 配置elasticsearch.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Sense安装使用"><span class="nav-text">7. Sense安装使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、安装-Kibaba"><span class="nav-text">四、安装 Kibaba</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载安装"><span class="nav-text">1. 下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置Kibana的host"><span class="nav-text">2. 配置Kibana的host</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动Kibana"><span class="nav-text">3. 启动Kibana</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -852,6 +852,11 @@
 </div>
 
 
+<div class="theme-info" style="margin-left:50px;"> 
+  <a class="theme-link" target="_blank" href="http://www.miitbeian.gov.cn/">
+    浙ICP备17029399号
+  </a>
+</div>
         
 
         

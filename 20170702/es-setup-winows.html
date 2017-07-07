@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Elasticsearch,Windows," />
 
 
 
@@ -93,12 +93,13 @@
 
 
 
-<meta name="description" content="在Windows上安装Elasticsearch 5.x自己想学习Elasticsearch，但是又不懂Linux，按照同事给的Linux安装教程，也是搞不明白，于是想先在Windows上安装一下入门。可是百度的大部分都是ES 1.x，2.x版本的教程，5.x的教程也是搞不明白，很多步骤就直接跳过了。经过一步一步的尝试，最终还是成功了。记录下，希望对大家有所帮助。 一、JAVA环境配置">
+<meta name="description" content="在Linux上安装Elasticsearch5.x，Windows 10">
+<meta name="keywords" content="Elasticsearch,Windows">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MicroX.S.r">
-<meta property="og:url" content="http://www.microxsr.com/2017/07/02/在Windows上安装Elasticsearch 5.x/index.html">
+<meta property="og:title" content="在Windows上安装Elasticsearch 5.x">
+<meta property="og:url" content="http://blog.microxsr.com/20170702/es-setup-winows.html">
 <meta property="og:site_name" content="MicroX.S.r">
-<meta property="og:description" content="在Windows上安装Elasticsearch 5.x自己想学习Elasticsearch，但是又不懂Linux，按照同事给的Linux安装教程，也是搞不明白，于是想先在Windows上安装一下入门。可是百度的大部分都是ES 1.x，2.x版本的教程，5.x的教程也是搞不明白，很多步骤就直接跳过了。经过一步一步的尝试，最终还是成功了。记录下，希望对大家有所帮助。 一、JAVA环境配置">
+<meta property="og:description" content="在Linux上安装Elasticsearch5.x，Windows 10">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170403002550008-677518731.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405101700832-1065028854.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405102339597-700031402.jpg">
@@ -114,10 +115,10 @@
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406092043113-2003368677.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406092227613-440020196.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406163203175-1108147003.jpg">
-<meta property="og:updated_time" content="2017-05-05T13:14:08.000Z">
+<meta property="og:updated_time" content="2017-07-07T16:58:35.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MicroX.S.r">
-<meta name="twitter:description" content="在Windows上安装Elasticsearch 5.x自己想学习Elasticsearch，但是又不懂Linux，按照同事给的Linux安装教程，也是搞不明白，于是想先在Windows上安装一下入门。可是百度的大部分都是ES 1.x，2.x版本的教程，5.x的教程也是搞不明白，很多步骤就直接跳过了。经过一步一步的尝试，最终还是成功了。记录下，希望对大家有所帮助。 一、JAVA环境配置">
+<meta name="twitter:title" content="在Windows上安装Elasticsearch 5.x">
+<meta name="twitter:description" content="在Linux上安装Elasticsearch5.x，Windows 10">
 <meta name="twitter:image" content="http://images2015.cnblogs.com/blog/359923/201704/359923-20170403002550008-677518731.png">
 
 
@@ -146,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://www.microxsr.com/2017/07/02/在Windows上安装Elasticsearch 5.x/"/>
+  <link rel="canonical" href="http://blog.microxsr.com/20170702/es-setup-winows.html"/>
 
 
 
 
 
-  <title> | MicroX.S.r</title>
+  <title>在Windows上安装Elasticsearch 5.x | MicroX.S.r</title>
   
 
 
@@ -301,7 +302,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.microxsr.com/2017/07/02/在Windows上安装Elasticsearch 5.x/">
+    <link itemprop="mainEntityOfPage" href="http://blog.microxsr.com/20170702/es-setup-winows.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MicroX.S.r">
@@ -318,7 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">在Windows上安装Elasticsearch 5.x</h2>
         
 
         <div class="post-meta">
@@ -341,6 +342,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Elasticsearch/" itemprop="url" rel="index">
+                    <span itemprop="name">Elasticsearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -349,7 +372,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/07/02/在Windows上安装Elasticsearch 5.x/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/20170702/es-setup-winows.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -358,7 +381,7 @@
 
           
           
-             <span id="/2017/07/02/在Windows上安装Elasticsearch 5.x/" class="leancloud_visitors" data-flag-title="">
+             <span id="/20170702/es-setup-winows.html" class="leancloud_visitors" data-flag-title="在Windows上安装Elasticsearch 5.x">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,6 +398,10 @@
           
 
           
+              <div class="post-description">
+                  在Linux上安装Elasticsearch5.x，Windows 10
+              </div>
+          
 
         </div>
       </header>
@@ -386,32 +413,42 @@
       
 
       
-        <h1 id="在Windows上安装Elasticsearch-5-x"><a href="#在Windows上安装Elasticsearch-5-x" class="headerlink" title="在Windows上安装Elasticsearch 5.x"></a>在Windows上安装Elasticsearch 5.x</h1><p>自己想学习Elasticsearch，但是又不懂Linux，按照同事给的Linux安装教程，也是搞不明白，于是想先在Windows上安装一下入门。可是百度的大部分都是ES 1.x，2.x版本的教程，5.x的教程也是搞不明白，很多步骤就直接跳过了。经过一步一步的尝试，最终还是成功了。记录下，希望对大家有所帮助。</p>
-<h3 id="一、JAVA环境配置"><a href="#一、JAVA环境配置" class="headerlink" title="一、JAVA环境配置"></a>一、JAVA环境配置</h3><p>ElasticSearch是基于lucence开发的，也就是运行需要java jdk()支持。所以要先安装JAVA环境。<br>由于ElasticSearch 5.x 依赖于<code>JDK 1.8</code>的，所以现在我们下载JDK 1.8或者更高版本。<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">下载JDK1.8</a>,下载完成后安装。<br>接下来就是环境变量配置。</p>
-<h6 id="1、右键-【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图"><a href="#1、右键-【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图" class="headerlink" title="1、右键 【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图"></a>1、右键 【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170403002550008-677518731.png" alt=""></p>
-<h6 id="2、在【系统变量】里【新建】，变量名为JAVA-HOME，变量值为JDK的安装路径。然后确定。"><a href="#2、在【系统变量】里【新建】，变量名为JAVA-HOME，变量值为JDK的安装路径。然后确定。" class="headerlink" title="2、在【系统变量】里【新建】，变量名为JAVA_HOME，变量值为JDK的安装路径。然后确定。"></a>2、在【系统变量】里【新建】，变量名为JAVA_HOME，变量值为JDK的安装路径。然后确定。</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405101700832-1065028854.jpg" alt=""></p>
+        <p>自己想学习Elasticsearch，但是又不懂Linux，按照同事给的Linux安装教程，也是搞不明白，于是想先在Windows上安装一下入门。可是百度的大部分都是ES 1.x，2.x版本的教程，5.x的教程也是搞不明白，很多步骤就直接跳过了。经过一步一步的尝试，最终还是成功了。记录下，希望对大家有所帮助。</p>
+<h3 id="一、JAVA环境配置"><a href="#一、JAVA环境配置" class="headerlink" title="一、JAVA环境配置"></a>一、JAVA环境配置</h3><p>ElasticSearch是基于lucence开发的，也就是运行需要java jdk()支持。所以要先安装JAVA环境。<br>由于ElasticSearch 5.x 依赖于 <code>JDK 1.8</code> 的，所以现在我们下载JDK 1.8或者更高版本。<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">下载JDK1.8</a>,下载完成后安装。<br>接下来就是环境变量配置。</p>
+<p>1、右键 【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170403002550008-677518731.png" alt=""></p>
+<p>2、在【系统变量】里【新建】，变量名为 <code>JAVA_HOME</code> ，变量值为JDK的安装路径。然后确定。</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405101700832-1065028854.jpg" alt=""></p>
 <blockquote>
 <p>验证是否成功,打开cmd，输入<code>echo %JAVA_HOME%</code>显示你设置的JDK的路径即为正确。</p>
 </blockquote>
-<h6 id="3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量-PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-bin-JAVA-HOME-jre-bin-】单击确定按钮。"><a href="#3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量-PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-bin-JAVA-HOME-jre-bin-】单击确定按钮。" class="headerlink" title="3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量 PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;】单击确定按钮。"></a>3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量 PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;】单击确定按钮。</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405102339597-700031402.jpg" alt=""></p>
-<h6 id="4、在【系统变量】选项区域中查看CLASSPATH-变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-lib-dt-jar-JAVA-HOME-lib-tools-jar-】。"><a href="#4、在【系统变量】选项区域中查看CLASSPATH-变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-lib-dt-jar-JAVA-HOME-lib-tools-jar-】。" class="headerlink" title="4、在【系统变量】选项区域中查看CLASSPATH 变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;】。"></a>4、在【系统变量】选项区域中查看CLASSPATH 变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;】。</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405102736800-608980320.jpg" alt=""></p>
-<h6 id="5、打开cmd，输入javac命令测试是否成功，出现下图则ok"><a href="#5、打开cmd，输入javac命令测试是否成功，出现下图则ok" class="headerlink" title="5、打开cmd，输入javac命令测试是否成功，出现下图则ok"></a>5、打开cmd，输入javac命令测试是否成功，出现下图则ok</h6><blockquote>
+<p>3、在【系统变量】选项区域中查看 <code>PATH</code> 变量，如果不存在，则新建变量 <code>PATH</code> ，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加 <code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</code>单击确定按钮。</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405102339597-700031402.jpg" alt=""></p>
+<p>4、在【系统变量】选项区域中查看 <code>CLASSPATH</code> 变量，如果不存在，则新建变量 <code>CLASSPATH</code> ，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加 <code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code>。</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405102736800-608980320.jpg" alt=""></p>
+<p>5、打开cmd，输入javac命令测试是否成功，出现下图则ok</p>
+<blockquote>
 <p>注：配置完成之后需要在新的cmd窗口输入javac。</p>
 </blockquote>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405103801941-1821244348.jpg" alt=""></p>
-<h3 id="二、ElasticSearch配置"><a href="#二、ElasticSearch配置" class="headerlink" title="二、ElasticSearch配置"></a>二、ElasticSearch配置</h3><h6 id="1、下载ElasticSearch"><a href="#1、下载ElasticSearch" class="headerlink" title="1、下载ElasticSearch"></a>1、下载ElasticSearch</h6><p>从官网下载ElasticSearch <a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" rel="external">https://www.elastic.co/downloads/elasticsearch</a>，下载zip。</p>
+<h3 id="二、ElasticSearch配置"><a href="#二、ElasticSearch配置" class="headerlink" title="二、ElasticSearch配置"></a>二、ElasticSearch配置</h3><p>1、下载ElasticSearch</p>
+<p>从官网下载ElasticSearch <a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" rel="external">https://www.elastic.co/downloads/elasticsearch</a>，下载zip。</p>
 <p>这里我们下载最新版 <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.0.zip" target="_blank" rel="external">ElasticSearch5.3</a> 。</p>
-<h6 id="2、解压到指定的目录，这里我解压到了C盘根目录。"><a href="#2、解压到指定的目录，这里我解压到了C盘根目录。" class="headerlink" title="2、解压到指定的目录，这里我解压到了C盘根目录。"></a>2、解压到指定的目录，这里我解压到了C盘根目录。</h6><h6 id="3、进入到C-elasticsearch-5-3-0-bin执行elasticsearch-bat"><a href="#3、进入到C-elasticsearch-5-3-0-bin执行elasticsearch-bat" class="headerlink" title="3、进入到C:\elasticsearch-5.3.0\bin执行elasticsearch.bat"></a>3、进入到<code>C:\elasticsearch-5.3.0\bin</code>执行<code>elasticsearch.bat</code></h6><h6 id="4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示"><a href="#4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示" class="headerlink" title="4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示"></a>4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405110532316-1899305039.jpg" alt=""></p>
-<h6 id="5、打开浏览器里测试一下"><a href="#5、打开浏览器里测试一下" class="headerlink" title="5、打开浏览器里测试一下"></a>5、打开浏览器里测试一下</h6><p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405111727753-1837279169.jpg" alt=""></p>
+<p>2、解压到指定的目录，这里我解压到了C盘根目录。</p>
+<p>3、进入到 <code>C:\elasticsearch-5.3.0\bin</code> 执行 <code>elasticsearch.bat</code> </p>
+<p>4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405110532316-1899305039.jpg" alt=""></p>
+<p>5、打开浏览器里测试一下</p>
+<p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405111727753-1837279169.jpg" alt=""></p>
 <p><em>OK大功告成~~</em></p>
-<h3 id="三、安装ElasticSearch-head插件"><a href="#三、安装ElasticSearch-head插件" class="headerlink" title="三、安装ElasticSearch-head插件"></a>三、安装ElasticSearch-head插件</h3><p>网上很多教程都说用<code>plugin</code>命令去装es-head插件，跟开头说的一样都是1.x，2.x版本，我也下载看了，里面是有plugin的文件。可是我们是要用5.x的版本，es包里并没有提供plugin文件。</p>
+<h3 id="三、安装ElasticSearch-head插件"><a href="#三、安装ElasticSearch-head插件" class="headerlink" title="三、安装ElasticSearch-head插件"></a>三、安装ElasticSearch-head插件</h3><p>网上很多教程都说用 <code>plugin</code> 命令去装es-head插件，跟开头说的一样都是1.x，2.x版本，我也下载看了，里面是有plugin的文件。可是我们是要用5.x的版本，es包里并没有提供plugin文件。</p>
 <blockquote>
 <p>elasticsearch5不可以直接通过plugin -install mobz/elasticsearch-head安装，并且head需要在node环境下运行</p>
 </blockquote>
-<h6 id="1、安装node环境"><a href="#1、安装node环境" class="headerlink" title="1、安装node环境"></a>1、安装node环境</h6><p>网址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> 下载Windows版msi的</p>
+<h4 id="1、安装node环境"><a href="#1、安装node环境" class="headerlink" title="1、安装node环境"></a>1、安装node环境</h4><p>网址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> 下载Windows版msi的</p>
 <p>安装完后打开cmd查看版本<code>node -v</code></p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405135001363-749485168.jpg" alt=""></p>
-<h6 id="2、安装grunt"><a href="#2、安装grunt" class="headerlink" title="2、安装grunt"></a>2、安装grunt</h6><ul>
+<h4 id="2、安装grunt"><a href="#2、安装grunt" class="headerlink" title="2、安装grunt"></a>2、安装grunt</h4><ul>
 <li>grunt是一个很方便的构建工具，可以进行打包压缩、测试、执行等等的工作，5.x里的head插件就是通过grunt启动的。因此需要安装grunt.</li>
 <li>注意：路径切到nodejs安装目录下，[我安装在C:\Program Files\nodejs]。</li>
 <li><code>npm install -g grunt-cli</code></li>
@@ -419,17 +456,17 @@
 <li>查看版本号<code>grunt -version</code></li>
 </ul>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405135952410-615170617.jpg" alt=""></p>
-<h6 id="4、下载head插件"><a href="#4、下载head插件" class="headerlink" title="4、下载head插件"></a>4、下载head插件</h6><p><a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="external">https://github.com/mobz/elasticsearch-head</a></p>
-<h6 id="5、配置head"><a href="#5、配置head" class="headerlink" title="5、配置head"></a>5、配置head</h6><p>由于head的代码还是2.6版本的，直接执行有很多限制，比如无法跨机器访问。因此需要用户修改两个地方：</p>
+<h4 id="3、下载head插件"><a href="#3、下载head插件" class="headerlink" title="3、下载head插件"></a>3、下载head插件</h4><p><a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="external">https://github.com/mobz/elasticsearch-head</a></p>
+<h4 id="4、配置head"><a href="#4、配置head" class="headerlink" title="4、配置head"></a>4、配置head</h4><p>由于head的代码还是2.6版本的，直接执行有很多限制，比如无法跨机器访问。因此需要用户修改两个地方：</p>
 <p>① c:/elasticsearch-head-master/Gruntfile.js,增加hostname属性，设置为*，如图</p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405144348128-1792241668.jpg" alt=""></p>
 <p>②修改连接地址：C:\elasticsearch-head-master/_site/app.js，将表红线地址改为es服务器地址。<br><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170405164107738-1326020059.jpg" alt=""></p>
 <p>修改一下es使用的参数。编辑C:/elasticsearch-5.3.0/config/config/elasticsearch.yml：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">cluster.name: es-5.2-test   #换个集群的名字，免得跟别人的集群混在一起</div><div class="line"></div><div class="line">node.name: node-es-101     #换个节点名字</div><div class="line"></div><div class="line">network.host: 0.0.0.0       #修改一下ES的监听地址，这样别的机器也可以访问</div><div class="line">http.port: 9200             #端口号，默认就好</div><div class="line"></div><div class="line"></div><div class="line"># 增加新的参数，这样head插件可以访问es</div><div class="line">http.cors.enabled: true </div><div class="line">http.cors.allow-origin: &quot;*&quot;</div><div class="line"></div><div class="line">@注意，设置参数的时候:后面要有空格！</div></pre></td></tr></table></figure>
-<h6 id="6、安装head"><a href="#6、安装head" class="headerlink" title="6、安装head"></a>6、安装head</h6><p>其实下载<a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="external">elasticsearch-head</a>的时候，github的链接上有介绍安装方式，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/mobz/elasticsearch-head.git</div><div class="line">cd elasticsearch-head</div><div class="line">npm install</div><div class="line">npm run start</div><div class="line">open http://localhost:9100/</div></pre></td></tr></table></figure></p>
-<p>进入到我们下载好的elasticsearch-head包里，然后执行<code>npm install</code></p>
+<h4 id="5、安装head"><a href="#5、安装head" class="headerlink" title="5、安装head"></a>5、安装head</h4><p>其实下载<a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="external">elasticsearch-head</a>的时候，github的链接上有介绍安装方式，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/mobz/elasticsearch-head.git</div><div class="line">cd elasticsearch-head</div><div class="line">npm install</div><div class="line">npm run start</div><div class="line">open http://localhost:9100/</div></pre></td></tr></table></figure></p>
+<p>进入到我们下载好的elasticsearch-head包里，然后执行 <code>npm install</code></p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406091830863-1674444990.jpg" alt=""></p>
-<p>安装完成之后<code>npm run start</code>或<code>grunt server</code><br><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406092043113-2003368677.jpg" alt=""></p>
+<p>安装完成之后 <code>npm run start</code> 或 <code>grunt server</code><br><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406092043113-2003368677.jpg" alt=""></p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406092227613-440020196.jpg" alt=""></p>
 <p>浏览器访问 <a href="http://localhost:9100/" target="_blank" rel="external">http://localhost:9100/</a></p>
 <p><img src="http://images2015.cnblogs.com/blog/359923/201704/359923-20170406163203175-1108147003.jpg" alt=""></p>
@@ -484,7 +521,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://www.microxsr.com/2017/07/02/在Windows上安装Elasticsearch 5.x/" title="">http://www.microxsr.com/2017/07/02/在Windows上安装Elasticsearch 5.x/</a>
+      <a href="http://blog.microxsr.com/20170702/es-setup-winows.html" title="在Windows上安装Elasticsearch 5.x">http://blog.microxsr.com/20170702/es-setup-winows.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -498,6 +535,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Elasticsearch/" rel="tag"># Elasticsearch</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+        </div>
+      
 
       
       
@@ -507,7 +552,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/02/在Linux上安装Elasticsearch5.x/" rel="next" title="在Linux上安装Elasticsearch5.x">
+              <a href="/20170702/es-setup-linux.html" rel="next" title="在Linux上安装Elasticsearch5.x">
                 <i class="fa fa-chevron-left"></i> 在Linux上安装Elasticsearch5.x
               </a>
             
@@ -617,7 +662,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -686,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Windows上安装Elasticsearch-5-x"><span class="nav-number">1.</span> <span class="nav-text">在Windows上安装Elasticsearch 5.x</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、JAVA环境配置"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、JAVA环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、右键-【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图"><span class="nav-number">1.0.1.0.0.1.</span> <span class="nav-text">1、右键 【我的电脑】→【属性】→【高级系统设置】→【环境变量】如图</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、在【系统变量】里【新建】，变量名为JAVA-HOME，变量值为JDK的安装路径。然后确定。"><span class="nav-number">1.0.1.0.0.2.</span> <span class="nav-text">2、在【系统变量】里【新建】，变量名为JAVA_HOME，变量值为JDK的安装路径。然后确定。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量-PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-bin-JAVA-HOME-jre-bin-】单击确定按钮。"><span class="nav-number">1.0.1.0.0.3.</span> <span class="nav-text">3、在【系统变量】选项区域中查看PATH变量，如果不存在，则新建变量 PATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;】单击确定按钮。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4、在【系统变量】选项区域中查看CLASSPATH-变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【-JAVA-HOME-lib-dt-jar-JAVA-HOME-lib-tools-jar-】。"><span class="nav-number">1.0.1.0.0.4.</span> <span class="nav-text">4、在【系统变量】选项区域中查看CLASSPATH 变量，如果不存在，则新建变量CLASSPATH，否则选中该变量，单击“编辑”按钮，在“变量值”文本框的最后位置追加【.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;】。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5、打开cmd，输入javac命令测试是否成功，出现下图则ok"><span class="nav-number">1.0.1.0.0.5.</span> <span class="nav-text">5、打开cmd，输入javac命令测试是否成功，出现下图则ok</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、ElasticSearch配置"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、ElasticSearch配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、下载ElasticSearch"><span class="nav-number">1.0.2.0.0.1.</span> <span class="nav-text">1、下载ElasticSearch</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、解压到指定的目录，这里我解压到了C盘根目录。"><span class="nav-number">1.0.2.0.0.2.</span> <span class="nav-text">2、解压到指定的目录，这里我解压到了C盘根目录。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、进入到C-elasticsearch-5-3-0-bin执行elasticsearch-bat"><span class="nav-number">1.0.2.0.0.3.</span> <span class="nav-text">3、进入到C:\elasticsearch-5.3.0\bin执行elasticsearch.bat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示"><span class="nav-number">1.0.2.0.0.4.</span> <span class="nav-text">4、本机就启动了一个ElasticSearch节点，启动后会显示如图所示</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5、打开浏览器里测试一下"><span class="nav-number">1.0.2.0.0.5.</span> <span class="nav-text">5、打开浏览器里测试一下</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、安装ElasticSearch-head插件"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、安装ElasticSearch-head插件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、安装node环境"><span class="nav-number">1.0.3.0.0.1.</span> <span class="nav-text">1、安装node环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、安装grunt"><span class="nav-number">1.0.3.0.0.2.</span> <span class="nav-text">2、安装grunt</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4、下载head插件"><span class="nav-number">1.0.3.0.0.3.</span> <span class="nav-text">4、下载head插件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5、配置head"><span class="nav-number">1.0.3.0.0.4.</span> <span class="nav-text">5、配置head</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6、安装head"><span class="nav-number">1.0.3.0.0.5.</span> <span class="nav-text">6、安装head</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、安装分词"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、安装分词</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、JAVA环境配置"><span class="nav-text">一、JAVA环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、ElasticSearch配置"><span class="nav-text">二、ElasticSearch配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、安装ElasticSearch-head插件"><span class="nav-text">三、安装ElasticSearch-head插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装node环境"><span class="nav-text">1、安装node环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、安装grunt"><span class="nav-text">2、安装grunt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、下载head插件"><span class="nav-text">3、下载head插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、配置head"><span class="nav-text">4、配置head</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、安装head"><span class="nav-text">5、安装head</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、安装分词"><span class="nav-text">四、安装分词</span></a></li></ol></div>
             
 
           </div>
@@ -729,6 +774,11 @@
 </div>
 
 
+<div class="theme-info" style="margin-left:50px;"> 
+  <a class="theme-link" target="_blank" href="http://www.miitbeian.gov.cn/">
+    浙ICP备17029399号
+  </a>
+</div>
         
 
         

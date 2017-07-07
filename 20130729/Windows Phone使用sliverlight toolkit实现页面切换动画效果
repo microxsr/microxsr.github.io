@@ -97,7 +97,7 @@
 <meta name="keywords" content="Toolkit,动画,页面跳转,页面导航,Windows Phone,wp,用户体验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Phone使用sliverlight toolkit实现页面切换动画效果">
-<meta property="og:url" content="http://www.microxsr.com/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/index.html">
+<meta property="og:url" content="http://blog.microxsr.com/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果">
 <meta property="og:site_name" content="MicroX.S.r">
 <meta property="og:description" content="Windows Phone使用sliverlight toolkit实现页面切换动画效果">
 <meta property="og:image" content="http://images.cnitblog.com/blog/359923/201307/29141117-8d3f3a3c129948bdb6c801924732b07d.png">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://www.microxsr.com/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/"/>
+  <link rel="canonical" href="http://blog.microxsr.com/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果"/>
 
 
 
@@ -288,7 +288,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.microxsr.com/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/">
+    <link itemprop="mainEntityOfPage" href="http://blog.microxsr.com/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MicroX.S.r">
@@ -358,7 +358,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -367,7 +367,7 @@
 
           
           
-             <span id="/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/" class="leancloud_visitors" data-flag-title="Windows Phone使用sliverlight toolkit实现页面切换动画效果">
+             <span id="/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果" class="leancloud_visitors" data-flag-title="Windows Phone使用sliverlight toolkit实现页面切换动画效果">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,7 +463,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://www.microxsr.com/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/" title="Windows Phone使用sliverlight toolkit实现页面切换动画效果">http://www.microxsr.com/2013/07/29/Windows Phone使用sliverlight toolkit实现页面切换动画效果/</a>
+      <a href="http://blog.microxsr.com/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果" title="Windows Phone使用sliverlight toolkit实现页面切换动画效果">http://blog.microxsr.com/20130729/Windows Phone使用sliverlight toolkit实现页面切换动画效果</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -504,7 +504,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2012/09/10/还原数据库时-提示因为数据库正在使用，无法获得对数据库的独占访问权-【解决办法】/" rel="next" title="【解决办法】还原数据库时,提示因为数据库正在使用，无法获得对数据库的独占访问权!">
+              <a href="/20120910/还原数据库时-提示因为数据库正在使用，无法获得对数据库的独占访问权-【解决办法】" rel="next" title="【解决办法】还原数据库时,提示因为数据库正在使用，无法获得对数据库的独占访问权!">
                 <i class="fa fa-chevron-left"></i> 【解决办法】还原数据库时,提示因为数据库正在使用，无法获得对数据库的独占访问权!
               </a>
             
@@ -514,7 +514,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2013/10/11/在Windows Phone中使用HTML编程/" rel="prev" title="在Windows Phone中使用HTML编程">
+              <a href="/20131011/wp-html-programming.html" rel="prev" title="在Windows Phone中使用HTML编程">
                 在Windows Phone中使用HTML编程 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -609,7 +609,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -705,6 +705,11 @@
 </div>
 
 
+<div class="theme-info" style="margin-left:50px;"> 
+  <a class="theme-link" target="_blank" href="http://www.miitbeian.gov.cn/">
+    浙ICP备17029399号
+  </a>
+</div>
         
 
         
